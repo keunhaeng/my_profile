@@ -1,0 +1,58 @@
+@layer base {
+  html, body { margin: 0; padding: 0; }
+  body { overscroll-behavior: none; }
+  main > :first-child { margin-top: 0 !important; }
+  main > :last-child { margin-bottom: 0 !important; }
+}
+::-webkit-scrollbar { display: none; }
+
+/* Desktop nav: default + active state */
+.nav-link {
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  color: #434655;
+}
+.nav-link.is-active {
+  color: #004ac6;
+  font-weight: 600;
+}
+
+/* Mobile nav panel */
+#mobileNav.open {
+  display: flex;
+}
+.nav-link-mobile {
+  display: block;
+  padding: 0.75rem 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 15px;
+  font-weight: 500;
+  color: #434655;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+.nav-link-mobile:hover {
+  background-color: #eaedff;
+  color: #131b2e;
+}
+.nav-link-mobile.is-active {
+  color: #004ac6;
+  background-color: #eff6ff;
+  font-weight: 600;
+}
+
+/* Project cards: whole card is clickable */
+.project-card:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+.project-card .project-inner-link {
+  position: relative;
+  z-index: 2;
+}
+
+/* Prevent layout shift when mobile menu toggles */
+#mobileMenuIcon {
+  transition: transform 0.2s ease;
+}
